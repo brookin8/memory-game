@@ -47,6 +47,7 @@ h1, h2 {
   font-size: 400%;
   margin-bottom: 1%;
   font-family: 'Gabriela', serif;
+  color: #ffffff;
 
 }
 

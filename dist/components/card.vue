@@ -26,7 +26,7 @@
 		border : 2px solid #000;
 		width : 125px;
 		height : 125px;
-		background-color : #4BCE7F;
+		background-color : #DBC970;
 		display : inline-block;
 		box-shadow:inset 0 0 0 2000px rgba(255, 255, 148,1);
 		background-size: cover;
