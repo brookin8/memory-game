@@ -1,0 +1,9 @@
+{
+ "name": "vue-memory",
+ "version": "1.0.0",
+ "description": "",
+ "author": "Erin Brookins Wilcox <brookin8@gmail.com>",
+ "private": true,
+ "scripts": {
+   "postinstall": "npm install express"
+}
