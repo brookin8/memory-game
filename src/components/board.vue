@@ -176,7 +176,7 @@
 
 		    cardPairNums : [] ,
 
-		    win : true,
+		    win : false,
 
 		    counter : 0,
       		
