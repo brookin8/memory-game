@@ -23,12 +23,12 @@
 <style>
 	.card {
 		margin : 5px;
-		border : 2px solid #000;
+		border : 2px solid #0073B1;
 		width : 125px;
 		height : 125px;
-		background-color : #DBC970;
+		background-color : #fff;
 		display : inline-block;
-		box-shadow:inset 0 0 0 2000px rgba(255, 255, 148,1);
+		box-shadow:inset 0 0 0 2000px rgba(255, 255, 255, 1);
 		background-size: cover;
 	}
 

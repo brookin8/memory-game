@@ -1,9 +1,21 @@
 <template>
 
 <div class = "board">
-	
-	<card v-for="card in cards" v-on:cardClicked = "catchCard(card)" v-bind:class="{ 'active' : card.active }" v-bind:style="{ 'background-image': 'url(' + images[card.number] + ')' }" />
-
+	<div class="row text-center" id="headingText">
+      <h1> Pug Match! </h1> <h3>Turns : {{ turns }}</h3>
+    </div>
+		
+		<div v-if="!win" class="row play" >
+			<card v-for="card in cards" v-on:cardClicked = "catchCard(card)" v-bind:class="{ 'active' : card.active }" v-bind:style="{ 'background-image': 'url(' + images[card.number] + ')' }" />
+		</div>
+		
+		<div v-else class="container win">
+			<h2>You win!</h2>
+			<br />
+			<img src="https://i.giphy.com/media/qjqUcgIyRjsl2/source.gif" style="width:50%">
+			<br />
+			<button class="btn btn-primary newGame" v-on:click="newGame">New Game?</button>
+		</div>
 
 </div>
 </template>
@@ -16,26 +28,25 @@
 		name : 'board', 
 		
 		beforeMount : function() {
-			 var currentIndex = this.images.length, temporaryValue, randomIndex;
+			 
+			var currentIndex = this.images.length, temporaryValue, randomIndex;
 
-  				while (0 !== currentIndex) {
-    				randomIndex = Math.floor(Math.random() * currentIndex);
-    				currentIndex -= 1;
+			while (0 !== currentIndex) {
+				randomIndex = Math.floor(Math.random() * currentIndex);
+				currentIndex -= 1;
 
-    				temporaryValue = this.images[currentIndex];
-    				this.images[currentIndex] = this.images[randomIndex];
-    				this.images[randomIndex] = temporaryValue;
-  				}
+				temporaryValue = this.images[currentIndex];
+				this.images[currentIndex] = this.images[randomIndex];
+				this.images[randomIndex] = temporaryValue;
+			}
 
-  			return this.images;
-
-
+			return this.images;
+			 
 		},
 
 		components : {
 			card
 		},
-
 
 		data () {
 		    return {
@@ -164,12 +175,22 @@
 		    cardPairImages : [],
 
 		    cardPairNums : [] ,
+
+		    win : true,
+
+		    counter : 0,
+      		
+      		turns : 0
 		}
 	},
 
 		methods : {
 			catchCard: function(card) {
 			
+			this.counter += 1;
+      		console.log(this.counter);
+      		this.turns = Math.floor(this.counter/2);
+
 			if(this.cardPairImages.length < 2) {
 				card.active = true;
 
@@ -190,6 +211,33 @@
 				
 			},
 
+			newGame : function() {
+				
+				for(var i=0;i<this.cards.length;i++) {
+  					this.cards[i].active = false;
+  				}
+
+  				this.win = false;
+
+  				this.counter = 0;
+
+  				this.turns = 0;
+
+				var currentIndex = this.images.length, temporaryValue, randomIndex;
+
+  				while (0 !== currentIndex) {
+    				randomIndex = Math.floor(Math.random() * currentIndex);
+    				currentIndex -= 1;
+
+    				temporaryValue = this.images[currentIndex];
+    				this.images[currentIndex] = this.images[randomIndex];
+    				this.images[randomIndex] = temporaryValue;
+  				}
+
+  				return this.images;
+
+			},
+
 			checkForWin : function() {
 				var counter = 0;
 				for(var i=0;i<this.cards.length;i++) {
@@ -198,7 +246,9 @@
 					}
 				}
 				if(counter === 20) {
-					alert('You win!');
+					// alert('You win!');
+					this.win = true;
+
 				}
  			},
 
@@ -260,12 +310,14 @@
 
 <style>
 	.board {
-		margin-left: 10%;
 		margin-bottom: 5%;
 		width : 720px;
 		background-color : transparent;
 		padding-top: 2%;
 		padding-bottom: 2%;
+		margin-left:auto;
+  		margin-right:auto;
+  		float: none;
 }
 	
  .card.active {
@@ -273,6 +325,77 @@
 	box-shadow: none;
 	}
 
+	.newGame {
+		background-color:#fff;
+		color:#0073B1;
+	}
+
+	.play {
+		padding-left:5%;
+		padding-right:auto;
+	}
+
+	.win {
+		height:520px;
+		width:520px;
+		color:#fff;
+		padding-left:auto;
+		padding-right:auto;
+		padding-top:20%;
+		margin-left:auto;
+		margin-right:auto;
+		float:none;
+	}
+
+	#headingText {
+	  text-align:center;
+	  padding-left:auto;
+	  padding-right:auto;
+	}
+
+	h1 {
+	  font-weight: normal;
+	  text-align: center;
+	  font-size: 400%;
+	  margin-bottom: 1%;
+	  /*font-family: 'Anton', sans-serif;*/
+	  font-family: 'Abril Fatface', cursive;
+	  color: #0073B1;
+	  text-shadow:
+	    -1px -1px 0 #fff,
+	    1px -1px 0 #fff,
+	    -1px 1px 0 #fff,
+	    1px 1px 0 #fff;  
+	  margin-left:auto;
+	  margin-right:auto;
+	  float: none;
+
+	}
+
+	h3 {
+	  margin-left:auto;
+	  margin-right:auto;
+	  margin-top:auto;
+	  margin-bottom:auto;
+	  float:none;
+	  text-align:left;
+	  font-family: 'Open Sans', sans-serif;
+	  color: #0073B1;
+	  font-weight: bold;
+	}
+
+	h2 {
+		text-align:center;
+		font-family: 'Abril Fatface', cursive;
+  		color: #fff;
+  		text-shadow:
+	    -1px -1px 0 #0073B1,
+	    1px -1px 0 #0073B1,
+	    -1px 1px 0 #0073B1,
+	    1px 1px 0 #0073B1;  
+	    font-size:350%;
+	    margin-bottom:2%;
+	}
 	
 
 </style>
