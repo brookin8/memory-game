@@ -5,16 +5,16 @@
       <h1> Pug Match! </h1> <h3>Turns : {{ turns }}</h3>
     </div>
 		
-		<div v-if="!win" class="row play" >
-			<card v-for="card in cards" v-on:cardClicked = "catchCard(card)" v-bind:class="{ 'active' : card.active }" v-bind:style="{ 'background-image': 'url(' + images[card.number] + ')' }" />
-		</div>
-		
-		<div v-else class="container win">
+		<div v-if="win" class="container win">
 			<h2>You win!</h2>
 			<br />
 			<img src="https://i.giphy.com/media/qjqUcgIyRjsl2/source.gif" style="width:50%">
 			<br />
 			<button class="btn btn-primary newGame" v-on:click="newGame">New Game?</button>
+		</div>
+
+		<div v-else class="row play" >
+			<card v-for="card in cards" v-on:cardClicked = "catchCard(card)" v-bind:class="{ 'active' : card.active }" v-bind:style="{ 'background-image': 'url(' + images[card.number] + ')' }" />
 		</div>
 
 </div>
