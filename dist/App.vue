@@ -10,24 +10,11 @@ import board from './components/board.vue'
 
 export default {
   name: 'app',
-  data () {
-    return {
-
-    }
-  },
   components : {
     board
   },
-
   props : ['cardNumb'],
 
-  methods : {
-    catchBoard : function() {
-      this.counter += 1;
-      console.log(this.counter);
-      this.turns = Math.floor(this.counter/2);
-    }
-  }
 }
 </script>
 

@@ -23,7 +23,7 @@
 <style>
 	.card {
 		margin : 5px;
-		border : 2px solid #0073B1;
+		border : 2px solid #EBE65A;
 		width : 125px;
 		height : 125px;
 		background-color : #fff;

@@ -217,9 +217,9 @@
   					this.cards[i].active = false;
   				}
 
-  				this.win = false;
-
   				this.counter = 0;
+
+  				this.win = false;
 
 				var currentIndex = this.images.length, temporaryValue, randomIndex;
 
@@ -360,10 +360,10 @@
 	  font-family: 'Abril Fatface', cursive;
 	  color: #0073B1;
 	  text-shadow:
-	    -1px -1px 0 #fff,
-	    1px -1px 0 #fff,
-	    -1px 1px 0 #fff,
-	    1px 1px 0 #fff;  
+	    -1px -1px 0 #EBE65A,
+	    1px -1px 0 #EBE65A,
+	    -1px 1px 0 #EBE65A,
+	    1px 1px 0 #EBE65A;  
 	  margin-left:auto;
 	  margin-right:auto;
 	  float: none;
