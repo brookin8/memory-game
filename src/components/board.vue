@@ -217,11 +217,9 @@
   					this.cards[i].active = false;
   				}
 
-  				this.win = false;
-
   				this.counter = 0;
 
-  				this.turns = 0;
+  				this.win = false;
 
 				var currentIndex = this.images.length, temporaryValue, randomIndex;
 
@@ -360,12 +358,13 @@
 	  margin-bottom: 1%;
 	  /*font-family: 'Anton', sans-serif;*/
 	  font-family: 'Abril Fatface', cursive;
-	  color: #0073B1;
-	  text-shadow:
-	    -1px -1px 0 #fff,
-	    1px -1px 0 #fff,
-	    -1px 1px 0 #fff,
-	    1px 1px 0 #fff;  
+	/*  color: #dedcee;*/
+	 color: #fffcf0;
+	  /*text-shadow:
+	    -1px -1px 0 #6a60a9,
+	    1px -1px 0 #6a60a9,
+	    -1px 1px 0 #6a60a9,
+	    1px 1px 0 #6a60a9; */
 	  margin-left:auto;
 	  margin-right:auto;
 	  float: none;
@@ -380,7 +379,7 @@
 	  float:none;
 	  text-align:left;
 	  font-family: 'Open Sans', sans-serif;
-	  color: #0073B1;
+	  color: #dedcee;
 	  font-weight: bold;
 	}
 
@@ -389,10 +388,10 @@
 		font-family: 'Abril Fatface', cursive;
   		color: #fff;
   		text-shadow:
-	    -1px -1px 0 #0073B1,
-	    1px -1px 0 #0073B1,
-	    -1px 1px 0 #0073B1,
-	    1px 1px 0 #0073B1;  
+	    -1px -1px 0 #000,
+	    1px -1px 0 #000,
+	    -1px 1px 0 #000,
+	    1px 1px 0 #000;  
 	    font-size:350%;
 	    margin-bottom:2%;
 	}
