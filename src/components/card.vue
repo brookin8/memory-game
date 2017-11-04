@@ -26,9 +26,9 @@
 		border : 2px solid #fffcf0;
 		width : 125px;
 		height : 125px;
-		background-color : #fbd14b;
+		background-color : #CACFD2;
 		display : inline-block;
-		box-shadow:inset 0 0 0 2000px rgba(251, 209, 75, 1);
+		box-shadow:inset 0 0 0 2000px rgba(202, 207, 210, 1);
 		background-size: cover;
 	}
 
