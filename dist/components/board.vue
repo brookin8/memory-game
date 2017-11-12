@@ -360,11 +360,11 @@
 	  font-family: 'Abril Fatface', cursive;
 	/*  color: #dedcee;*/
 	 color: #fffcf0;
-	text-shadow:
+	/*text-shadow:
 	    -2px -2px 0 #000,
 	    2px -2px 0 #000,
 	    -2px 2px 0 #000,
-	    2px 2px 0 #000; 
+	    2px 2px 0 #000; */
 	  margin-left:auto;
 	  margin-right:auto;
 	  float: none;
